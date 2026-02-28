@@ -1,0 +1,165 @@
+# 📘 DOCUMENTO MESTRE – PIT
+
+## Cantinhos Encantados por BH
+
+---
+
+## 1. IDENTIFICAÇÃO DO PROJETO
+
+**Nome:** Cantinhos Encantados por BH
+**Tipo:** Projeto de Inovação Tecnológica (PIT)
+**Categoria:** Aplicação Web
+**Área:** Turismo gastronômico / Experiência do usuário / Desenvolvimento Web
+
+---
+
+## 2. CONTEXTO E PROBLEMA
+
+Belo Horizonte possui forte cultura de cafeterias e turismo gastronômico.
+Entretanto:
+
+* As informações estão dispersas em redes sociais.
+* Não há filtros específicos por estilo, ocasião ou cardápio.
+* Conteúdos em vídeo estão espalhados.
+* Proprietários não possuem visão estruturada de feedback.
+* Não existe uma plataforma focada exclusivamente em cafeterias.
+
+Existe uma lacuna digital entre descoberta, experiência e análise de desempenho.
+
+---
+
+## 3. OBJETIVO GERAL
+
+Desenvolver uma aplicação web que centralize e organize cafeterias de Belo Horizonte, permitindo:
+
+* Busca por filtros personalizados
+* Visualização de resenhas reais em vídeo
+* Utilização de cupons de desconto
+* Favoritar cafeterias
+* Dashboard simples para proprietários acompanharem métricas de avaliações
+
+---
+
+## 4. TIPOS DE USUÁRIO
+
+### 1️⃣ Pessoa Física (Usuário comum)
+
+* Navegar e filtrar cafeterias
+* Favoritar estabelecimentos
+* Visualizar cupons
+* Assistir vídeos embed
+* Avaliar cafeterias
+
+### 2️⃣ Proprietário
+
+* Cadastrar cafeteria
+* Cadastrar cupons
+* Visualizar dashboard com métricas
+* Acompanhar avaliações
+* Identificar pontos de melhoria
+
+---
+
+## 5. DIFERENCIAL COMPETITIVO
+
+O projeto se diferencia por:
+
+* Foco exclusivo em cafeterias
+* Organização por estilo, ocasião e tipo de cardápio
+* Resenhas reais em vídeo como base decisória
+* Cupons sem modelo obrigatório de assinatura
+* Dashboard para proprietários analisarem métricas
+* Abordagem local (Belo Horizonte)
+
+Concorrentes analisados:
+
+* TripAdvisor (genérico)
+* Duo Gourmet (modelo por assinatura)
+* Apontador (apenas listagem)
+
+---
+
+## 6. ARQUITETURA E TECNOLOGIAS
+
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+* Responsividade mobile-first
+* LocalStorage para favoritos (pré-login)
+
+### Backend
+
+* Node.js
+* Express.js
+* API REST
+* JSON
+* Autenticação via JWT
+
+### Banco de Dados (em nuvem)
+
+Opções consideradas:
+
+* MySQL (preferência para dados relacionais e dashboard)
+* MongoDB (estrutura flexível)
+
+### Integrações
+
+* Embed TikTok
+* Embed Instagram
+* Embed YouTube
+
+### Versionamento
+
+* Git
+* GitHub
+
+---
+
+## 7. FUNCIONALIDADES PRINCIPAIS
+
+* Cadastro de usuário
+* Cadastro de proprietário
+* Login e autenticação
+* Filtros personalizados
+* Exibição detalhada das cafeterias
+* Favoritar estabelecimentos
+* Sistema de cupons
+* Dashboard com métricas
+* Integração com vídeos externos
+
+---
+
+## 8. REQUISITOS NÃO FUNCIONAIS
+
+* Responsividade
+* Segurança básica (hash de senha)
+* Performance (carregamento < 3 segundos)
+* Código modular
+* Escalabilidade futura
+* Integração via APIs externas
+* Compatibilidade cross-browser
+
+---
+
+## 9. METODOLOGIA
+
+* Scrum
+* Sprints incrementais
+* Modelagem UML (Casos de Uso, DER, Classes)
+* Prototipação em Figma
+* Desenvolvimento incremental
+* Testes e deploy final
+
+---
+
+## 10. ESTRUTURA DE ENTREGA PIT II
+
+* Banco modelado
+* Backend funcional
+* Frontend integrado
+* Dashboard implementado
+* Sistema de cupons
+* Deploy
+* Documentação final
