@@ -8,6 +8,13 @@ import pool from "./config/db.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import cors from "cors";
+import dotenv from "dotenv";
+
+import authRoutes from "./routes/authRoutes.js";
+
+dotenv.config();
+
 // Cria a aplicação Express
 const app = express();
 
@@ -134,4 +141,25 @@ INICIAR SERVIDOR
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
+});
+
+
+app.use(cors());
+
+app.use("/auth", authRoutes);
+
+app.listen(process.env.PORT, () => {
+ console.log(`Servidor rodando na porta ${process.env.PORT}`);
+});
+
+/* Criando rota protegida para testar o middleware de autenticação */
+import { verificarToken } from "./middlewares/authMiddleware.js";
+
+app.get("/perfil", verificarToken, (req, res) => {
+
+ res.json({
+  message: "Usuário autenticado",
+  user: req.user
+ });
+
 });
