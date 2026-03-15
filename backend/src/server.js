@@ -40,7 +40,8 @@ CANTINHOSENCANTADOS
 Então precisamos voltar duas pastas e entrar no frontend
 */
 
-const frontendPath = path.join(__dirname, "../../frontend");
+const frontendPath = path.join(__dirname, "../public");
+const indexPath = path.join(frontendPath, "index.html");
 
 /*
 ========================================
@@ -69,7 +70,7 @@ o servidor envia o index.html
 */
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
+  res.sendFile(indexPath);
 });
 
 /*
