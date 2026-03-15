@@ -40,7 +40,7 @@ CANTINHOSENCANTADOS
 Então precisamos voltar duas pastas e entrar no frontend
 */
 
-const frontendPath = path.join(__dirname, "../../../frontend");
+const frontendPath = path.join(__dirname, "../../frontend");
 
 /*
 ========================================
