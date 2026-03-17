@@ -1,34 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="PT-BR">
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantinhos Encantados</title>
+    <link rel="icon" href="img/LogoIcone.svg" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img
+                src="img/LogoNova.svg"
+                alt="Logo"
+                class="navbar-logo"
+            />
+            <div class="navbar-content">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cafeterias.html" class="nav-link">Cafeterias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cupons.html" class="nav-link">Cupons</a>
+                    </li>
+                    <li class="nav-item nav-item-featured">
+                        <a href="destaque.html" class="nav-link">Em Destaque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="planos.html" class="nav-link">Planos</a>
+                    </li>
+                </ul>
+                <div class="navbar-actions">
+                    <a href="login.html" class="btn btn-outline">Entrar</a>
+                    <a href="cadastro.html" class="btn btn-primary">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <body>
 
-<h1>Login</h1>
+    <main class="login-container">
+        <header class="welcome-section">
+            <h1 class="welcome-heading">Bem-vindo de volta!</h1>
+            <p class="welcome-description">
+                Acesse sua conta e continue explorando os cantinhos mais encantados de BH.
+            </p>
+        </header>
 
-<form id="loginForm">
+        <section class="form-section">
+            <div class="form-wrapper">
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
 
-<input type="email" id="email" placeholder="Email" required>
+                    <div class="input-group">
+                        <input type="password" id="senha" placeholder="Senha" required>
+                    </div>
 
-<input type="password" id="senha" placeholder="Senha" required>
+                    <button type="submit" class="primary-button">
+                        <span class="button-text">Entrar</span>
+                    </button>
 
-<button type="submit">
-Entrar
-</button>
+                    <div class="separator">
+                        <div class="separator-line"></div>
+                    </div>
 
-</form>
+                    <button type="button" class="social-button google-button">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/0480d5f6cef985c6c5037c7a08bceeded1781947?placeholderIfAbsent=true"
+                            alt="Google" class="social-icon" />
+                        <span class="button-text">Entrar com o Google</span>
+                    </button>
 
-<p>
-Não possui conta?
-<a href="cadastro.html">Cadastrar</a>
-</p>
+                    <button type="button" class="social-button facebook-button">
+                        <img src="https://api.builder.io/api/v1/image/assets/TEMP/dc60b88cc3113c2d90dba109aba1515064a21648?placeholderIfAbsent=true"
+                            alt="Facebook" class="social-icon" />
+                        <span class="button-text">Entrar com o Facebook</span>
+                    </button>
+                </form>
 
-<script src="js/login.js"></script>
-
+                <a href="#" class="forgot-password-link">Esqueceu sua senha?</a>
+                <p>
+                    Não possui conta?
+                    <a href="cadastro.html">Cadastrar</a>
+                </p>
+            </div>
+        </section>
+    </main>
+        <script src="js/login.js"></script>
 </body>
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <img
+                    src="img/LogoNova.svg"
+                    alt="Cantinhos Encantados Logo"
+                    class="footer-logo"
+                />
+                <nav class="footer-navigation">
+                    <div class="nav-link-wrapper">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="sobre.html" class="nav-link">Sobre nós</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </div>
+                    <div class="social-icon-wrapper">
+                        <img
+                            src="https://api.builder.io/api/v1/image/assets/TEMP/8030a71db2880c166051f22e91b09a67d2b3afe4?placeholderIfAbsent=true&apiKey=4ad1fb1bedbb43419673d37210a97da2"
+                            alt="Instagram"
+                            class="social-icon"
+                        />
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="politica.html" class="nav-link">Política de privacidade</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="termos.html" class="nav-link">Termos de uso</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-copyright">
+                © 2025 Cantinhos Encantados por BH – Projeto Acadêmico por Rafaela Mendes
+            </p>
+        </div>
+    </footer>
 </html>

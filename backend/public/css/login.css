@@ -1,0 +1,273 @@
+.login-container {
+    align-items: stretch;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: start;
+    background-color: var(--Color-Scheme-1-Background, #fff);
+    padding: 30px 80px 100px;
+}
+
+.welcome-section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    justify-content: start;
+}
+
+.welcome-heading {
+    color: var(--Marrom-Principal, #6a3e2a);
+    letter-spacing: 0.96px;
+    max-width: var(--Max-Width-max-width-large, 768px);
+    font: 48px/1 Modak, -apple-system, Roboto, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.welcome-description {
+    color: var(--Color-Scheme-1-Text, #000);
+    font: 24px Satoshi, -apple-system, Roboto, Helvetica, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.form-section {
+    max-width: var(--Max-Width-max-width-small, 480px);
+    align-self: center;
+    margin-top: 30px;
+    width: 480px;
+}
+
+.form-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.login-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.input-group {
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid var(--Marrom-Principal, #6a3e2a);
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    color: #000000;
+    white-space: nowrap;
+    justify-content: start;
+    padding: 12px;
+    font: 400 16px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.input-group:not(:first-child) {
+    margin-top: 16px;
+}
+
+.form-input {
+    font-size: var(--Text-Sizes-Text-Regular, 16px);
+    align-self: stretch;
+    flex: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    margin: auto 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #000000;
+    font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.form-input::placeholder {
+    color: #000000;
+}
+
+.primary-button {
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--Marrom-Principal, #6a3e2a);
+    display: flex;
+    margin-top: 16px;
+    min-height: 48px;
+    width: 100%;
+    gap: 8px;
+    color: var(--Color-White, #fff);
+    white-space: nowrap;
+    background-color: var(--Marrom-Principal, #6a3e2a);
+    padding: 12px 24px;
+    font: 600 16px Inter, -apple-system, Roboto, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.primary-button .button-text {
+    color: var(--Color-White, #fff);
+    font-size: var(--Text-Sizes-Text-Regular, 16px);
+    align-self: stretch;
+    margin: auto 0;
+}
+
+.separator {
+    border-radius: 5px;
+    display: flex;
+    margin-top: 16px;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.separator-line {
+    background-color: #6a3e2a;
+    min-height: 2px;
+    width: 100%;
+    border: 2px solid rgba(106, 62, 42, 1);
+}
+
+.social-button {
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid var(--Marrom-Principal, #6a3e2a);
+    display: flex;
+    margin-top: 16px;
+    width: 100%;
+    gap: 12px;
+    color: var(--Color-Neutral-Darkest, #000);
+    padding: 12px 24px;
+    font: 400 16px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+    background: transparent;
+    cursor: pointer;
+}
+
+.social-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+    align-self: stretch;
+    flex-shrink: 0;
+    margin: auto 0;
+}
+
+.social-button .button-text {
+    color: var(--Color-Neutral-Darkest, #000);
+    font-size: var(--Text-Sizes-Text-Regular, 16px);
+    align-self: stretch;
+    margin: auto 0;
+}
+
+.forgot-password-link {
+    color: var(--Color-Scheme-1-Text, #000);
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    text-decoration: underline;
+    margin-top: 24px;
+    font: 400 var(--Text-Sizes-Text-Regular, 16px) Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Button hover states for better UX */
+.primary-button:hover {
+    background-color: #5a3424;
+    border-color: #5a3424;
+}
+
+.social-button:hover {
+    background-color: #f5f5f5;
+}
+
+.forgot-password-link:hover {
+    color: var(--Marrom-Principal, #6a3e2a);
+}
+
+/* Focus states for accessibility */
+.form-input:focus {
+    outline: 2px solid var(--Marrom-Principal, #6a3e2a);
+    outline-offset: 2px;
+}
+
+.primary-button:focus,
+.social-button:focus {
+    outline: 2px solid var(--Marrom-Principal, #6a3e2a);
+    outline-offset: 2px;
+}
+
+.forgot-password-link:focus {
+    outline: 2px solid var(--Marrom-Principal, #6a3e2a);
+    outline-offset: 2px;
+}
+
+@media (max-width: 991px) {
+    .login-container {
+        padding: 0 20px;
+    }
+
+    .welcome-section {
+        max-width: 100%;
+    }
+
+    .welcome-heading {
+        max-width: 100%;
+        font-size: 40px;
+    }
+
+    .welcome-description {
+        max-width: 100%;
+    }
+
+    .form-section {
+        max-width: 100%;
+    }
+
+    .form-wrapper {
+        max-width: 100%;
+    }
+
+    .login-form {
+        max-width: 100%;
+    }
+
+    .input-group {
+        max-width: 100%;
+        white-space: initial;
+    }
+
+    .form-input {
+        max-width: 100%;
+    }
+
+    .primary-button {
+        max-width: 100%;
+        white-space: initial;
+        padding: 0 20px;
+    }
+
+    .separator {
+        max-width: 100%;
+    }
+
+    .separator-line {
+        max-width: 100%;
+    }
+
+    .social-button {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
