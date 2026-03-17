@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
  const senha = document.getElementById("senha").value;
 
  const resposta = await fetch(
-  "http://localhost:3000/auth/login",
+  "https://cantinhos-encantados-bh-production.up.railway.app/auth/login",
   {
    method: "POST",
 

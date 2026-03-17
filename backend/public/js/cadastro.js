@@ -10,7 +10,7 @@ form.addEventListener("submit", async (e) => {
  const tipo = document.getElementById("tipo").value;
 
  const resposta = await fetch(
-  "http://localhost:3000/auth/cadastro",
+  "https://cantinhos-encantados-bh-production.up.railway.app/auth/cadastro",
   {
    method: "POST",
 
