@@ -58,6 +58,12 @@ input:focus-visible {
     outline: none;
 }
 
+input[type="checkbox"] {
+    accent-color: var(--Marrom-Principal);
+}
+
+
+
 .input-group:has(input:focus-visible) {
     border: 2px solid var(--Amarelo-Secundario);
 }

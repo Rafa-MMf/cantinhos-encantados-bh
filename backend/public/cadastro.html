@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cantinhos Encantados</title>
     <link rel="icon" href="img/LogoIcone.svg" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <header>
     <nav class="navbar">
         <div class="navbar-container">
-            <img
-                src="img/LogoNova.svg"
-                alt="Logo"
-                class="navbar-logo"
-            />
+            <img src="img/LogoNova.svg" alt="Logo" class="navbar-logo" />
             <div class="navbar-content">
                 <ul class="nav-links">
                     <li class="nav-item">
@@ -43,77 +41,142 @@
 </header>
 
 <body>
+    <main class="registration-container">
+        <header class="header-section">
+            <h1 class="main-heading">Crie sua conta agora</h1>
+            <p class="description-text">
+                Descubra descontos exclusivos, resenhas reais e os melhores lugares de
+                Belo Horizonte.
+            </p>
+        </header>
 
-<h1>Criar conta</h1>
+        <section class="form-section">
+            <form id="cadastroForm" class="registration-form">
 
-<form id="cadastroForm">
+                <div class="field-group">
+                    <label class="field-label" for="nome">Nome e Sobrenome</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="nome" class="form-input" placeholder="Digite seu nome e sobrenome">
+                    </div>
+                    <span class="error"></span>
+                </div>
 
-<input type="text" id="nome" placeholder="Nome" required>
+                <div class="field-group">
+                    <label class="field-label" for="telefone">Seu melhor Telefone</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="telefone" class="form-input" placeholder="(31) 99999-9999">
+                    </div>
+                    <span class="error"></span>
+                </div>
 
-<input type="email" id="email" placeholder="Email" required>
+                <div class="field-group">
+                    <label class="field-label" for="birthDate">Data de nascimento</label>
+                    <div class="input-wrapper">
+                        <input type="date" id="birthDate" class="form-input">
+                    </div>
+                    <span class="error"></span>
+                </div>
 
-<input type="password" id="senha" placeholder="Senha" required>
+                <div class="field-group">
+                    <label class="field-label" for="tipo">Tipo de conta</label>
+                    <select id="tipo" class="form-input, input-wrapper">
+                        <option value="COMUM">Usuário</option>
+                        <option value="PROPRIETARIO">Proprietário</option>
+                    </select>
+                </div>
 
-<select id="tipo">
+                <div class="field-group">
+                    <label class="field-label" for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" class="form-input" placeholder="exemplo@email.com">
+                    </div>
+                    <span class="error"></span>
+                </div>
 
-<option value="COMUM">Usuário</option>
+                <div class="field-group">
+                    <label class="field-label" for="senha">Senha</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="senha" class="form-input" placeholder="Crie uma senha">
+                    </div>
+                    <span class="error"></span>
+                </div>
 
-<option value="PROPRIETARIO">Proprietário</option>
+                <div class="field-group">
+                    <label class="field-label" for="confirmarSenha">Confirmar senha</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="confirmarSenha" class="form-input" placeholder="Repita sua senha">
+                    </div>
+                    <span class="error"></span>
+                </div>
 
-</select>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="whatsappNotifications" class="checkbox-input">
+                    <label for="whatsappNotifications" class="checkbox-label">
+                        Quero receber avisos e promoções no WhatsApp
+                    </label>
+                </div>
 
-<button type="submit">
-Cadastrar
-</button>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="termos" class="checkbox-input">
+                    <label for="termos" class="checkbox-label">
+                        Li e concordo com os Termos de Uso e Política de Privacidade
+                        <span class="required-asterisk">*</span>
+                    </label>
+                </div>
+                <span class="error" id="erro-termos"></span>
 
-</form>
+                <div class="form-separator">
+                    <div class="separator-line"></div>
+                </div>
 
-<p>
-Já possui conta?
-<a href="login.html">Login</a>
-</p>
+                <button type="submit" class="submit-button" id="btnSubmit">
+                    <span class="button-text">Criar conta</span>
+                </button>
 
-<script src="js/cadastro.js"></script>
+                <div id="successMessage" class="success"></div>
 
+            </form>
+            <p>
+                Já possui conta?
+                <a href="login.html">Login</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="js/cadastro.js"></script>
 </body>
 
 <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <img
-                    src="img/LogoNova.svg"
-                    alt="Cantinhos Encantados Logo"
-                    class="footer-logo"
-                />
-                <nav class="footer-navigation">
-                    <div class="nav-link-wrapper">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </div>
-                    <div class="nav-link-wrapper">
-                        <a href="sobre.html" class="nav-link">Sobre nós</a>
-                    </div>
-                    <div class="nav-link-wrapper">
-                        <a href="contato.html" class="nav-link">Contato</a>
-                    </div>
-                    <div class="social-icon-wrapper">
-                        <img
-                            src="https://api.builder.io/api/v1/image/assets/TEMP/8030a71db2880c166051f22e91b09a67d2b3afe4?placeholderIfAbsent=true&apiKey=4ad1fb1bedbb43419673d37210a97da2"
-                            alt="Instagram"
-                            class="social-icon"
-                        />
-                    </div>
-                    <div class="nav-link-wrapper">
-                        <a href="politica.html" class="nav-link">Política de privacidade</a>
-                    </div>
-                    <div class="nav-link-wrapper">
-                        <a href="termos.html" class="nav-link">Termos de uso</a>
-                    </div>
-                </nav>
-            </div>
-            <div class="footer-divider"></div>
-            <p class="footer-copyright">
-                © 2025 Cantinhos Encantados por BH – Projeto Acadêmico por Rafaela Mendes
-            </p>
+    <div class="footer-container">
+        <div class="footer-content">
+            <img src="img/LogoNova.svg" alt="Cantinhos Encantados Logo" class="footer-logo" />
+            <nav class="footer-navigation">
+                <div class="nav-link-wrapper">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="sobre.html" class="nav-link">Sobre nós</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </div>
+                <div class="social-icon-wrapper">
+                    <img src="https://api.builder.io/api/v1/image/assets/TEMP/8030a71db2880c166051f22e91b09a67d2b3afe4?placeholderIfAbsent=true&apiKey=4ad1fb1bedbb43419673d37210a97da2"
+                        alt="Instagram" class="social-icon" />
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="politica.html" class="nav-link">Política de privacidade</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="termos.html" class="nav-link">Termos de uso</a>
+                </div>
+            </nav>
         </div>
-    </footer>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">
+            © 2025 Cantinhos Encantados por BH – Projeto Acadêmico por Rafaela Mendes
+        </p>
+    </div>
+</footer>
+
 </html>

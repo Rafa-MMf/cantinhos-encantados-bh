@@ -155,11 +155,26 @@ app.listen(process.env.PORT, () => {
 /* Criando rota protegida para testar o middleware de autenticação */
 import { verificarToken } from "./middlewares/authMiddleware.js";
 
-app.get("/perfil", verificarToken, (req, res) => {
+app.get("/perfil", verificarToken, async (req, res) => {
+  try {
+    const userId = req.user.id;
 
- res.json({
-  message: "Usuário autenticado",
-  user: req.user
- });
+    const [rows] = await pool.query(
+      "SELECT nome, data_nascimento, tipo FROM usuarios WHERE id = ?",
+      [userId]
+    );
 
+    if (rows.length === 0) {
+      return res.status(404).json({ message: "Usuário não encontrado" });
+    }
+
+    res.json(rows[0]);
+
+  } catch (error) {
+    console.error("Erro ao buscar perfil:", error);
+
+    res.status(500).json({
+      message: "Erro no servidor"
+    });
+  }
 });

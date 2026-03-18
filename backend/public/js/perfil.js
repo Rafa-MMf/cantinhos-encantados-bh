@@ -1,42 +1,67 @@
 async function carregarPerfil() {
+    const token = localStorage.getItem("token");
 
- const token = localStorage.getItem("token");
+    console.log("TOKEN:", token);
 
- if (!token) {
+    if (!token) {
+        window.location.href = "login.html";
+        return;
+    }
 
-  window.location.href = "login.html";
+    try {
+        const resposta = await fetch("https://cantinhos-encantados-bh-production.up.railway.app/perfil", {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + token
+            }
+        });
 
- }
+        console.log("STATUS:", resposta.status);
 
- const resposta = await fetch(
-  "http://localhost:3000/perfil",
-  {
+        if (resposta.status === 401 || resposta.status === 403) {
+            localStorage.removeItem("token");
+            window.location.href = "login.html";
+            return;
+        }
 
-   headers: {
-    Authorization: "Bearer " + token
-   }
+        const dados = await resposta.json();
+        console.log("DADOS:", dados);
 
-  }
- );
+        // Agora não precisa mais do dados.user
+        const user = dados;
 
- const dados = await resposta.json();
+        // 🔥 Nome
+        const nome = user.nome || "Nome não encontrado";
 
- document.getElementById("dadosUsuario").innerHTML = `
+        // 🔥 Data corrigida
+        let dataFormatada = "Não informada";
 
- <p>ID: ${dados.user.id}</p>
+        if (user.data_nascimento) {
+            const data = new Date(user.data_nascimento);
 
- <p>Tipo: ${dados.user.tipo}</p>
+            if (!isNaN(data)) {
+                dataFormatada = data.toLocaleDateString("pt-BR");
+            }
+        }
 
- `;
+        // 🔥 Tipo
+        const tipo = user.tipo || "Não informado";
 
+        // Aplicar no HTML
+        document.getElementById("userName").textContent = nome;
+        document.getElementById("userBirth").textContent = dataFormatada;
+        document.getElementById("userType").textContent = tipo;
+
+    } catch (erro) {
+        console.error("Erro ao carregar perfil:", erro);
+    }
 }
 
 function logout() {
-
- localStorage.removeItem("token");
-
- window.location.href = "login.html";
-
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
 }
 
 carregarPerfil();
+
+console.log("DADOS COMPLETOS:", dados);
