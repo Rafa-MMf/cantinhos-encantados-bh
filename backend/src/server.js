@@ -13,6 +13,8 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
 
+import { verificarToken } from "./middlewares/authMiddleware.js";
+
 dotenv.config();
 
 // Cria a aplicação Express
@@ -148,30 +150,25 @@ app.use(cors());
 
 app.use("/auth", authRoutes);
 
-app.listen(process.env.PORT, () => {
- console.log(`Servidor rodando na porta ${process.env.PORT}`);
-});
-
 /* Criando rota protegida para testar o middleware de autenticação */
-import { verificarToken } from "./middlewares/authMiddleware.js";
+import { buscarPorId } from "./models/userModel.js";
 
 app.get("/perfil", verificarToken, async (req, res) => {
   try {
     const userId = req.user.id;
 
-    const [rows] = await pool.query(
-      "SELECT nome, data_nascimento, tipo FROM usuarios WHERE id = ?",
-      [userId]
-    );
+    const usuario = await buscarPorId(userId);
 
-    if (rows.length === 0) {
-      return res.status(404).json({ message: "Usuário não encontrado" });
+    if (!usuario) {
+      return res.status(404).json({
+        message: "Usuário não encontrado"
+      });
     }
 
-    res.json(rows[0]);
+    res.json(usuario);
 
   } catch (error) {
-    console.error("Erro ao buscar perfil:", error);
+    console.error("ERRO NO PERFIL:", error);
 
     res.status(500).json({
       message: "Erro no servidor"
