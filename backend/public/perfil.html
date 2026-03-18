@@ -52,19 +52,23 @@
 
             <div class="profile-info" aria-label="Informacoes do perfil">
                 <article class="info-item">
-                    <p class="info-label">📅 Data de nascimento</p>
+                    <p class="info-label">Data de nascimento</p>
                     <p class="info-value" id="userBirth">--/--/----</p>
                 </article>
 
                 <article class="info-item">
-                    <p class="info-label">🧾 Tipo de conta</p>
+                    <p class="info-label">Tipo de conta</p>
                     <p class="info-value" id="userType">Usuario</p>
                 </article>
-            </div>
 
-            <button type="button" class="btn-edit-profile">Editar perfil</button>
-            <button onclick="logout()">
-                Logout
+                <article class="info-item">
+                    <p class="info-label">Telefone</p>
+                    <p class="info-value" id="userPhone">Não informado</p>
+                </article>
+            </div>
+            <br>
+            <button class="btn btn-outline" onclick="logout()">
+                Desconectar
             </button>
         </section>
     </main>

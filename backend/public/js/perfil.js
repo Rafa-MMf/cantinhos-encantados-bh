@@ -37,7 +37,7 @@ async function carregarPerfil() {
         // ✅ Nome
         const nome = user.nome || "Nome não encontrado";
 
-        // ✅ Data (se existir)
+        // ✅ Data
         let dataFormatada = "Não informada";
 
         if (user.data_nascimento || user.dataNascimento) {
@@ -48,13 +48,13 @@ async function carregarPerfil() {
             }
         }
 
-        // ✅ Tipo
-        const tipo = user.tipo || "Não informado";
+        // ✅ Telefone
+        const telefone = user.telefone || user.phone || "Não informado";
 
         // ✅ Atualizar HTML
         document.getElementById("userName").textContent = nome;
         document.getElementById("userBirth").textContent = dataFormatada;
-        document.getElementById("userType").textContent = tipo;
+        document.getElementById("userPhone").textContent = telefone;
 
         // 🔥 Log correto (dentro do escopo)
         console.log("USUARIO DO BANCO:", user);

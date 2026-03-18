@@ -10,7 +10,7 @@ export async function cadastro(req, res) {
 
  try {
 
-  const { nome, email, senha, tipo } = req.body;
+  const { nome, email, senha, tipo, telefone, data_nascimento } = req.body;
 
   const senhaHash = await bcrypt.hash(senha, 10);
 
@@ -18,7 +18,9 @@ export async function cadastro(req, res) {
    nome,
    email,
    senhaHash,
-   tipo || "usuario"
+   tipo,
+   telefone,
+   data_nascimento || "usuario"
   );
 
   res.json({
@@ -66,7 +68,9 @@ export async function login(req, res) {
 
    {
     id: usuario.id_usuario,
-    tipo: usuario.tipo
+    tipo: usuario.tipo,
+    telefone: usuario.telefone,
+    data_nascimento: usuario.data_nascimento
    },
 
    process.env.JWT_SECRET,

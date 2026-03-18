@@ -5,10 +5,10 @@ export async function criarUsuario(nome, email, senhaHash, tipo) {
   try {
     const [result] = await pool.query(
       `
-      INSERT INTO usuarios (nome, email, senha_hash, tipo)
-      VALUES (?, ?, ?, ?)
+      INSERT INTO usuarios (nome, email, senha_hash, tipo, data_nascimento, telefone)
+      VALUES (?, ?, ?, ?, ?, ?)
       `,
-      [nome, email, senhaHash, tipo]
+      [nome, email, senhaHash, tipo, null, null]
     );
 
     return result;
@@ -44,7 +44,7 @@ export async function buscarPorId(id) {
   try {
     const [rows] = await pool.query(
       `
-      SELECT nome, tipo
+      SELECT nome, tipo, data_nascimento, telefone
       FROM usuarios
       WHERE id_usuario = ?
       `,
