@@ -1,5 +1,5 @@
 import express from "express";
-import { db } from "../config/db.js";
+import { pool } from "../config/db.js";
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     } = req.body;
 
     try {
-        const [result] = await db.execute(`
+        const [result] = await pool.execute(`
             INSERT INTO cafeterias 
             (nome, descricao, endereco, bairro, faixa_preco, telefone, site, instagram)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
 // ✅ LISTAGEM PÚBLICA
 router.get("/", async (req, res) => {
     try {
-        const [rows] = await db.execute(`
+        const [rows] = await pool.execute(`
             SELECT * FROM cafeterias
             WHERE ativo = 1
             ORDER BY criado_em DESC
@@ -55,7 +55,7 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params;
 
     try {
-        const [rows] = await db.execute(
+        const [rows] = await pool.execute(
             "SELECT * FROM cafeterias WHERE id_cafeteria = ?",
             [id]
         );
