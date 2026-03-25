@@ -1,6 +1,29 @@
-const form = document.getElementById("cadastroForm");
+const form1 = document.getElementById("cadastroForm");
 const btn = document.getElementById("btnSubmit");
 const successMessage = document.getElementById("successMessage");
+
+// ==========================
+// TIPO DE CONTA (TOGGLE)
+// ==========================
+const btnUsuario = document.getElementById("btnUsuario");
+const btnProprietario = document.getElementById("btnProprietario");
+const camposProprietario = document.getElementById("camposProprietario");
+
+let tipoConta = "COMUM";
+
+btnUsuario.addEventListener("click", () => {
+    tipoConta = "COMUM";
+    btnUsuario.classList.add("ativo");
+    btnProprietario.classList.remove("ativo");
+    camposProprietario.style.display = "none";
+});
+
+btnProprietario.addEventListener("click", () => {
+    tipoConta = "PROPRIETARIO";
+    btnProprietario.classList.add("ativo");
+    btnUsuario.classList.remove("ativo");
+    camposProprietario.style.display = "block";
+});
 
 // ==========================
 // TELEFONE
@@ -45,20 +68,23 @@ function setSuccess(input) {
 // ==========================
 // SUBMIT
 // ==========================
-form.addEventListener("submit", async (e) => {
+form1.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const nome = document.getElementById("nome");
     const email = document.getElementById("email");
     const senha = document.getElementById("senha");
     const confirmarSenha = document.getElementById("confirmarSenha");
-    const tipo = document.getElementById("tipo");
     const termos = document.getElementById("termos");
     const erroTermos = document.getElementById("erro-termos");
 
+    // Campos proprietário
+    const nomeCafeteria = document.getElementById("nomeCafeteria");
+    const endereco = document.getElementById("endereco");
+
     let valido = true;
 
-    // Reset
+    // Reset erros (SEM limpar inputs)
     document.querySelectorAll(".error").forEach(e => e.innerText = "");
 
     // Nome
@@ -89,6 +115,20 @@ form.addEventListener("submit", async (e) => {
     if (!termos.checked) {
         erroTermos.innerText = "Você precisa aceitar os termos";
         valido = false;
+    } else {
+        erroTermos.innerText = "";
+    }
+
+    // Validação extra proprietário
+    if (tipoConta === "PROPRIETARIO") {
+        if (nomeCafeteria.value.trim() === "") {
+            setError(nomeCafeteria, "Informe o nome da cafeteria");
+            valido = false;
+        }
+        if (endereco.value.trim() === "") {
+            setError(endereco, "Informe o endereço");
+            valido = false;
+        }
     }
 
     if (!valido) return;
@@ -98,6 +138,21 @@ form.addEventListener("submit", async (e) => {
     btn.innerText = "Criando conta...";
 
     try {
+        const body = {
+            nome: nome.value,
+            telefone: telefoneInput.value,
+            dataNascimento: document.getElementById("birthDate").value,
+            email: email.value,
+            senha: senha.value,
+            tipo: tipoConta
+        };
+
+        // Adiciona dados extras se for proprietário
+        if (tipoConta === "PROPRIETARIO") {
+            body.nomeCafeteria = nomeCafeteria.value;
+            body.endereco = endereco.value;
+        }
+
         const resposta = await fetch(
             "https://cantinhos-encantados-bh-production.up.railway.app/auth/cadastro",
             {
@@ -105,12 +160,7 @@ form.addEventListener("submit", async (e) => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    nome: nome.value,
-                    email: email.value,
-                    senha: senha.value,
-                    tipo: tipo.value
-                })
+                body: JSON.stringify(body)
             }
         );
 
@@ -118,6 +168,7 @@ form.addEventListener("submit", async (e) => {
 
         if (resposta.ok) {
             successMessage.innerText = "Conta criada com sucesso!";
+            successMessage.style.color = "#2ecc71";
             successMessage.classList.add("show");
 
             setTimeout(() => {
@@ -140,6 +191,9 @@ form.addEventListener("submit", async (e) => {
     btn.innerText = "Criar conta";
 });
 
-form.addEventListener("reset", (e) => {
+// ==========================
+// BLOQUEIA RESET
+// ==========================
+form1.addEventListener("reset", (e) => {
     e.preventDefault();
 });

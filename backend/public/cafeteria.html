@@ -7,6 +7,7 @@
     <title>Cantinhos Encantados</title>
     <link rel="icon" href="img/LogoIcone.svg" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <header>
     <nav class="navbar">
@@ -40,39 +41,21 @@
 </header>
 
 <body>
-    <section class="hero-banner-container">
-        <div class="hero-banner">
-            <img src="img/GrafismoMancha.svg" class="background-image" alt="Background decoration" />
-            <div class="content-section">
-                <h1 class="main-headline">
-                    Descubra os cantinhos
-                    <span class="highlight-text">mais encantados</span>
-                    de BH!
-                </h1>
-                <p class="subtitle">
-                    Cafés, restaurantes e experiências que revelam a alma da cidade.
-                </p>
-            </div>
-            <div class="image-gallery">
-                <div class="left-column">
-                    <img src="img/fotos/angelina-orlova-dupe.jpeg" class="gallery-image" alt="Local experience" />
-                    <img src="img/fotos/angelina-orlova-dupe (1).jpeg" class="gallery-image" alt="Local experience" />
-                    <img src="img/fotos/antonia- carter-dupe.jpeg" class="gallery-image" alt="Local experience" />
-                </div>
-                <div class="right-column">
-                    <img src="img/fotos/bekah-beckman-dupe.jpeg" class="gallery-image" alt="Local experience" />
-                    <img src="img/fotos/bintou--dupe.jpeg" class="gallery-image" alt="Local experience" />
-                    <img src="img/fotos/chloe-g-dupe.jpeg" class="gallery-image" alt="Local experience" />
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div id="listaCafeterias"></div>
+    <main class="registration-container">
+        <header class="header-section">
+            <h1 class="main-heading">Crie sua conta agora</h1>
+            <p class="description-text">
+                Descubra descontos exclusivos, resenhas reais e os melhores lugares de
+                Belo Horizonte.
+            </p>
+        </header>
 
-        <script src="js/listar.js"></script>
-    </section>
+        <section class="">
+            <div id="cafeteria"></div>
 
+            <script src="js/cafeteria.js"></script>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
@@ -105,7 +88,8 @@
             </p>
         </div>
     </footer>
-
 </body>
+
+
 
 </html>

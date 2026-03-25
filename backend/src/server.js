@@ -12,6 +12,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
+import cafeteriasRoutes from "./routes/cafeteriasRoutes.js";
 
 import { verificarToken } from "./middlewares/authMiddleware.js";
 
@@ -175,3 +176,5 @@ app.get("/perfil", verificarToken, async (req, res) => {
     });
   }
 });
+
+app.use("/cafeterias", cafeteriasRoutes);

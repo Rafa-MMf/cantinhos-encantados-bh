@@ -43,34 +43,25 @@
 <body>
     <main class="registration-container">
         <header class="header-section">
-            <h1 class="main-heading">Crie sua conta agora</h1>
+            <h1 class="main-heading">Adicione sua cafeteria agora no Cantinhos Encantados!</h1>
             <p class="description-text">
-                Descubra descontos exclusivos, resenhas reais e os melhores lugares de
-                Belo Horizonte.
+                ...
             </p>
         </header>
 
         <section class="form-section">
+            <form id="formCafeteria" class="registration-form">
 
-            <!-- TOGGLE TIPO DE CONTA -->
-            <div class="tipo-conta">
-                <button type="button" id="btnUsuario" class="ativo">Usuário</button>
-                <button type="button" id="btnProprietario">Proprietário</button>
-            </div>
-
-            <form id="cadastroForm" class="registration-form">
-
-                <!-- CAMPOS COMUNS -->
                 <div class="field-group">
-                    <label class="field-label" for="nome">Nome e Sobrenome</label>
+                    <label class="field-label" for="nome">Nome da Cafeteria</label>
                     <div class="input-wrapper">
-                        <input type="text" id="nome" class="form-input" placeholder="Digite seu nome e sobrenome">
+                        <input type="text" id="nome" placeholder="Nome da Cafeteria" required>
                     </div>
                     <span class="error"></span>
                 </div>
 
                 <div class="field-group">
-                    <label class="field-label" for="telefone">Seu melhor Telefone</label>
+                    <label class="field-label" for="telefone">Telefone da Cafeteria</label>
                     <div class="input-wrapper">
                         <input type="tel" id="telefone" class="form-input" placeholder="(31) 99999-9999">
                     </div>
@@ -78,91 +69,69 @@
                 </div>
 
                 <div class="field-group">
-                    <label class="field-label" for="birthDate">Data de nascimento</label>
-                    <div class="input-wrapper">
-                        <input type="date" id="birthDate" class="form-input">
-                    </div>
-                    <span class="error"></span>
-                </div>
-
-                <!-- CAMPOS EXCLUSIVOS PROPRIETÁRIO -->
-                <div id="camposProprietario" style="display: none;">
-
-                    <div class="field-group">
-                        <label class="field-label" for="nomeCafeteria">Nome da Cafeteria</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="nomeCafeteria" class="form-input"
-                                placeholder="Nome do estabelecimento">
-                        </div>
-                    </div>
-
-                    <div class="field-group">
-                        <label class="field-label" for="endereco">Endereço</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="endereco" class="form-input" placeholder="Endereço da cafeteria">
-                        </div>
-                    </div>
-
+                    <label class="field-label" for="tipo">Faixa de preço</label>
+                    <select id="faixa_preco" class="form-input, input-wrapper">
+                        <option value="">Selecionar</option>
+                        <option value="BAIXO">Baixo</option>
+                        <option value="MEDIO">Médio</option>
+                        <option value="LTO">Alto</option>
+                    </select>
                 </div>
 
                 <div class="field-group">
-                    <label class="field-label" for="email">E-mail</label>
+                    <label class="field-label" for="bairro">Bairro da Cafeteria</label>
                     <div class="input-wrapper">
-                        <input type="email" id="email" class="form-input" placeholder="exemplo@email.com">
+                        <input type="text" id="bairro" class="form-input" placeholder="Bairro">
                     </div>
                     <span class="error"></span>
                 </div>
 
                 <div class="field-group">
-                    <label class="field-label" for="senha">Senha</label>
+                    <label class="field-label" for="instagram">Instagram da Cafeteria</label>
                     <div class="input-wrapper">
-                        <input type="password" id="senha" class="form-input" placeholder="Crie uma senha">
+                        <input type="text" id="instagram" class="form-input" placeholder="@instagram">
                     </div>
                     <span class="error"></span>
                 </div>
 
                 <div class="field-group">
-                    <label class="field-label" for="confirmarSenha">Confirmar senha</label>
+                    <label class="field-label" for="site">Site da Cafeteria</label>
                     <div class="input-wrapper">
-                        <input type="password" id="confirmarSenha" class="form-input" placeholder="Repita sua senha">
+                        <input type="text" id="site" class="form-input" placeholder="www.site.com">
                     </div>
                     <span class="error"></span>
                 </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="whatsappNotifications" class="checkbox-input">
-                    <label for="whatsappNotifications" class="checkbox-label">
-                        Quero receber avisos e promoções no WhatsApp
-                    </label>
+                <div class="field-group">
+                    <label class="field-label" for="descricao">Descrição da Cafeteria</label>
+                    <div class="input-wrapper">
+                        <textarea id="descricao" class="form-input" placeholder="Descrição da Cafeteria"></textarea>
+                    </div>
+                    <span class="error"></span>
                 </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="termos" class="checkbox-input">
-                    <label for="termos" class="checkbox-label">
-                        Li e concordo com os Termos de Uso e Política de Privacidade
-                        <span class="required-asterisk">*</span>
-                    </label>
+                <div class="field-group">
+                    <label class="field-label" for="endereco">Endereço da Cafeteria</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="endereco" class="form-input" placeholder="Endereço da Cafeteria">
+                    </div>
+                    <span class="error"></span>
                 </div>
-                <span class="error" id="erro-termos"></span>
 
                 <div class="form-separator">
                     <div class="separator-line"></div>
                 </div>
 
                 <button type="submit" class="submit-button" id="btnSubmit">
-                    <span class="button-text">Criar conta</span>
+                    <span class="button-text">Criar Cafeteria</span>
                 </button>
 
                 <div id="successMessage" class="success"></div>
 
             </form>
-
-            <p>
-                Já possui conta?
-                <a href="login.html">Login</a>
-            </p>
-
         </section>
+
+
     </main>
     <footer class="footer">
         <div class="footer-container">
