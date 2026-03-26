@@ -3,29 +3,6 @@ const btn = document.getElementById("btnSubmit");
 const successMessage = document.getElementById("successMessage");
 
 // ==========================
-// TIPO DE CONTA (TOGGLE)
-// ==========================
-const btnUsuario = document.getElementById("btnUsuario");
-const btnProprietario = document.getElementById("btnProprietario");
-const camposProprietario = document.getElementById("camposProprietario");
-
-let tipoConta = "COMUM";
-
-btnUsuario.addEventListener("click", () => {
-    tipoConta = "COMUM";
-    btnUsuario.classList.add("ativo");
-    btnProprietario.classList.remove("ativo");
-    camposProprietario.style.display = "none";
-});
-
-btnProprietario.addEventListener("click", () => {
-    tipoConta = "PROPRIETARIO";
-    btnProprietario.classList.add("ativo");
-    btnUsuario.classList.remove("ativo");
-    camposProprietario.style.display = "block";
-});
-
-// ==========================
 // TELEFONE
 // ==========================
 const telefoneInput = document.getElementById("telefone");

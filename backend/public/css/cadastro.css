@@ -1,3 +1,59 @@
+/*Botoes muda bloco e blocos */
+.container-form {
+    background: var(--Bege-Fundos);
+    padding: 15px 30px;
+    border-radius: 10px;
+    
+}
+
+.container-form form {
+    display: none;
+}
+
+.container-form form.ativo {
+    display: block;
+}
+
+.container-form form {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    position: absolute;
+}
+
+.container-form form.ativo {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+}
+
+/* CONTAINER DOS BOTÕES */
+.toggle {
+    display: flex;
+}
+
+/* BOTÕES */
+.toggle button {
+    padding: 8px 20px;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* BOTÃO ATIVO (SELECIONADO) */
+.toggle button.ativo {
+    background-color: var(--Bege-Fundos);
+    border-radius: 10px 10px 0 0;
+}
+
+/* HOVER */
+.toggle button:hover {
+    background-color: var(--Marrom-Principal);
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+/*-------------------------------------*/
+
 .registration-container {
     overflow: hidden;
     background-color: var(--Color-Scheme-1-Background, #fff);

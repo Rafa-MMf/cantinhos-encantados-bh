@@ -50,44 +50,113 @@
             </p>
         </header>
 
-        <section class="form-section">
+        <section class="form-section ">
 
-            <!-- TOGGLE TIPO DE CONTA -->
-            <div class="tipo-conta">
-                <button type="button" id="btnUsuario" class="ativo">Usuário</button>
-                <button type="button" id="btnProprietario">Proprietário</button>
+            <div class="toggle">
+                <button type="button" class="usuario-btn ativo">Usuário</button>
+                <button type="button" class="proprietario-btn">Proprietário</button>
             </div>
+            <div class="container-form">
+                <form id="cadastroForm" class="registration-form usuario ativo">
 
-            <form id="cadastroForm" class="registration-form">
-
-                <!-- CAMPOS COMUNS -->
-                <div class="field-group">
-                    <label class="field-label" for="nome">Nome e Sobrenome</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="nome" class="form-input" placeholder="Digite seu nome e sobrenome">
+                    <div class="field-group">
+                        <label class="field-label" for="nome">Nome e Sobrenome</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="nome" class="form-input" placeholder="Digite seu nome e sobrenome">
+                        </div>
+                        <span class="error"></span>
                     </div>
-                    <span class="error"></span>
-                </div>
 
-                <div class="field-group">
-                    <label class="field-label" for="telefone">Seu melhor Telefone</label>
-                    <div class="input-wrapper">
-                        <input type="tel" id="telefone" class="form-input" placeholder="(31) 99999-9999">
+                    <div class="field-group">
+                        <label class="field-label" for="telefone">Seu melhor Telefone</label>
+                        <div class="input-wrapper">
+                            <input type="tel" id="telefone" class="form-input" placeholder="(31) 99999-9999">
+                        </div>
+                        <span class="error"></span>
                     </div>
-                    <span class="error"></span>
-                </div>
 
-                <div class="field-group">
-                    <label class="field-label" for="birthDate">Data de nascimento</label>
-                    <div class="input-wrapper">
-                        <input type="date" id="birthDate" class="form-input">
+                    <div class="field-group">
+                        <label class="field-label" for="birthDate">Data de nascimento</label>
+                        <div class="input-wrapper">
+                            <input type="date" id="birthDate" class="form-input">
+                        </div>
+                        <span class="error"></span>
                     </div>
-                    <span class="error"></span>
-                </div>
+                    <div class="field-group">
+                        <label class="field-label" for="email">E-mail</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" class="form-input" placeholder="exemplo@email.com">
+                        </div>
+                        <span class="error"></span>
+                    </div>
 
-                <!-- CAMPOS EXCLUSIVOS PROPRIETÁRIO -->
-                <div id="camposProprietario" style="display: none;">
+                    <div class="field-group">
+                        <label class="field-label" for="senha">Senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="senha" class="form-input" placeholder="Crie uma senha">
+                        </div>
+                        <span class="error"></span>
+                    </div>
 
+                    <div class="field-group">
+                        <label class="field-label" for="confirmarSenha">Confirmar senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmarSenha" class="form-input"
+                                placeholder="Repita sua senha">
+                        </div>
+                        <span class="error"></span>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="whatsappNotifications" class="checkbox-input">
+                        <label for="whatsappNotifications" class="checkbox-label">
+                            Quero receber avisos e promoções no WhatsApp
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termos" class="checkbox-input">
+                        <label for="termos" class="checkbox-label">
+                            Li e concordo com os Termos de Uso e Política de Privacidade
+                            <span class="required-asterisk">*</span>
+                        </label>
+                    </div>
+                    <span class="error" id="erro-termos"></span>
+
+                    <div class="form-separator">
+                        <div class="separator-line"></div>
+                    </div>
+
+                    <button type="submit" class="submit-button" id="btnSubmit">
+                        <span class="button-text">Criar conta</span>
+                    </button>
+
+                    <div id="successMessage" class="success"></div>
+                </form>
+                <form id="cadastroForm" class="registration-form proprietario">
+                    <div class="field-group">
+                        <label class="field-label" for="nome">Nome e Sobrenome</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="nome" class="form-input" placeholder="Digite seu nome e sobrenome">
+                        </div>
+                        <span class="error"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="telefone">Seu melhor Telefone</label>
+                        <div class="input-wrapper">
+                            <input type="tel" id="telefone" class="form-input" placeholder="(31) 99999-9999">
+                        </div>
+                        <span class="error"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="birthDate">Data de nascimento</label>
+                        <div class="input-wrapper">
+                            <input type="date" id="birthDate" class="form-input">
+                        </div>
+                        <span class="error"></span>
+                    </div>
                     <div class="field-group">
                         <label class="field-label" for="nomeCafeteria">Nome da Cafeteria</label>
                         <div class="input-wrapper">
@@ -103,65 +172,64 @@
                         </div>
                     </div>
 
-                </div>
-
-                <div class="field-group">
-                    <label class="field-label" for="email">E-mail</label>
-                    <div class="input-wrapper">
-                        <input type="email" id="email" class="form-input" placeholder="exemplo@email.com">
+                    <div class="field-group">
+                        <label class="field-label" for="email">E-mail</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" class="form-input" placeholder="exemplo@email.com">
+                        </div>
+                        <span class="error"></span>
                     </div>
-                    <span class="error"></span>
-                </div>
 
-                <div class="field-group">
-                    <label class="field-label" for="senha">Senha</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="senha" class="form-input" placeholder="Crie uma senha">
+                    <div class="field-group">
+                        <label class="field-label" for="senha">Senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="senha" class="form-input" placeholder="Crie uma senha">
+                        </div>
+                        <span class="error"></span>
                     </div>
-                    <span class="error"></span>
-                </div>
 
-                <div class="field-group">
-                    <label class="field-label" for="confirmarSenha">Confirmar senha</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="confirmarSenha" class="form-input" placeholder="Repita sua senha">
+                    <div class="field-group">
+                        <label class="field-label" for="confirmarSenha">Confirmar senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmarSenha" class="form-input"
+                                placeholder="Repita sua senha">
+                        </div>
+                        <span class="error"></span>
                     </div>
-                    <span class="error"></span>
-                </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="whatsappNotifications" class="checkbox-input">
-                    <label for="whatsappNotifications" class="checkbox-label">
-                        Quero receber avisos e promoções no WhatsApp
-                    </label>
-                </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="whatsappNotifications" class="checkbox-input">
+                        <label for="whatsappNotifications" class="checkbox-label">
+                            Quero receber avisos e promoções no WhatsApp
+                        </label>
+                    </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="termos" class="checkbox-input">
-                    <label for="termos" class="checkbox-label">
-                        Li e concordo com os Termos de Uso e Política de Privacidade
-                        <span class="required-asterisk">*</span>
-                    </label>
-                </div>
-                <span class="error" id="erro-termos"></span>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termos" class="checkbox-input">
+                        <label for="termos" class="checkbox-label">
+                            Li e concordo com os Termos de Uso e Política de Privacidade
+                            <span class="required-asterisk">*</span>
+                        </label>
+                    </div>
+                    <span class="error" id="erro-termos"></span>
 
-                <div class="form-separator">
-                    <div class="separator-line"></div>
-                </div>
+                    <div class="form-separator">
+                        <div class="separator-line"></div>
+                    </div>
 
-                <button type="submit" class="submit-button" id="btnSubmit">
-                    <span class="button-text">Criar conta</span>
-                </button>
+                    <button type="submit" class="submit-button" id="btnSubmit">
+                        <span class="button-text">Criar conta</span>
+                    </button>
 
-                <div id="successMessage" class="success"></div>
+                    <div id="successMessage" class="success"></div>
 
-            </form>
-
+                </form>
+            </div>
             <p>
                 Já possui conta?
                 <a href="login.html">Login</a>
             </p>
-
+            <script src="js/animacoes.js"></script>
         </section>
     </main>
     <footer class="footer">
